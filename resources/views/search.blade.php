@@ -35,9 +35,11 @@
                     <div class="p-6 bg-white border-b border-gray-200">
                         <b>English</b> <span class="font-serif"> {{ $word->english }}</span>
                     </div>
-                    <div class="p-6 bg-white border-b border-gray-200">
-                        <b>Pronunciation</b> <span class="font-serif"> {{ $word->pronunciation }}</span>
-                    </div>
+                    @if($word->pronunciation)
+                        <div class="p-6 bg-white border-b border-gray-200">
+                            <b>Pronunciation</b> <span class="font-serif"> {{ $word->pronunciation }}</span>
+                        </div>
+                    @endif
                 </div>
 
                 <div class="mt-6 bg-white overflow-hidden shadow-sm sm:rounded-lg">
