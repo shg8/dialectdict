@@ -6,7 +6,7 @@
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
                     <a href="{{ route('search') }}">
-                        <span class="block pt-2 text-gray-600 font-bold text-lg"><span style="color: #664d9d">Dialect</span><span style="color: #7eb688">Dict</span></span>
+                        <x-application-logo/>
                     </a>
                 </div>
 

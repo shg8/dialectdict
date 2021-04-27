@@ -23,10 +23,10 @@
                 <div class="px-1 sm:px-6 lg:px-4">
                     <div class="card-button rounded-lg">
                         <div class="rounded-lg overflow-hidden bg-white border-gray-200">
-                            <div class="flex justify-around border-b p-6">
-                                <p class="text-xl font-serif">{{ $word->english }}</p>
+                            <div class="flex flex-col justify-around border-b p-6">
+                                <p class="text-xl font-serif flex-initial text-center">{{ $word->english }}</p>
                                 @if($word->chinese)
-                                    <p class="text-xl">{{ $word->chinese }}</p>
+                                    <p class="text-lg flex-initial text-center">({{ $word->chinese }})</p>
                                 @endif
                             </div>
                             <div class="bg-white border-b p-6">

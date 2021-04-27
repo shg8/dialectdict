@@ -26,7 +26,7 @@ class ContributionRequest extends FormRequest
         return [
             'english' => 'required|max:50',
             'chinese' => 'required_without_all:pronunciation,definition|max:50',
-            'pronunciation' => 'required_without_all:chinese,definition|max:50',
+            'pronunciation' => 'required|max:50',
             'definition' => 'required_without_all:chinese,pronunciation|max:1000',
             'upload' => 'nullable|file|mimes:mp3,wav',
             'tags' => 'required|exists:App\Models\Tag,id'

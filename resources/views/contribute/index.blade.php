@@ -35,36 +35,41 @@
                         @csrf
                         <div class="grid grid-cols-1 gap-6">
                             <label class="block">
+                                <span class="text-gray-700"><b>Dialect *</b></span>
+                            </label>
+                            <select name="tags" class="rounded-lg">
+                                @foreach($tags as $id => $name)
+                                    <option value="{{ $id }}" {{ old('tags') == $id ? 'selected' : '' }}>{{ $name }}</option>
+                                @endforeach
+                            </select>
+                            <label class="block">
                                 <span class="text-gray-700"><b>English *</b></span>
                                 <input name="english" type="text" value="{{ old('english') }}"
                                        class="mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0">
+                                <span class="text-gray-500">Write the word you want to translate in English</span>
+                            </label>
+                            <label class="block">
+                                <span class="text-gray-700"><b>Pronunciation *</b></span>
+                                <input name="pronunciation" type="text" value="{{ old('pronunciation') }}"
+                                       class="mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0">
+                                <span class="text-gray-500">Write the approximation of the how the word sounds in your dialect with English letters</span>
                             </label>
                             <label class="block">
                                 <span class="text-gray-700">Chinese</span>
                                 <input name="chinese" type="text" value="{{ old('chinese') }}"
                                        class="mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0">
+                                <span class="text-gray-500">(Optional) Write the word in Chinese characters</span>
                             </label>
                             <label class="block">
-                                <span class="text-gray-700">Pronunciation</span>
-                                <input name="pronunciation" type="text" value="{{ old('pronunciation') }}"
-                                       class="mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0">
-                            </label>
-                            <label class="block">
-                                <span class="text-gray-700">Definition</span>
+                                <span class="text-gray-700">Context</span>
                                 <input name="definition" type="text" value="{{ old('definition') }}"
                                        class="mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0">
+                                <span class="text-gray-500">(Optional) Feel free to include English synonyms, sample sentences, and additional information</span>
                             </label>
                             <label class="block">
                                 <span class="text-gray-700">Upload Pronunciation (mp3, wav)</span>
                                 <input name="upload" type="file"
                                        class="mt-1 block w-full bg-transparent border-transparent focus:border-gray-500 focus:bg-white focus:ring-0">
-                            </label>
-                            <label class="block">
-                                <select name="tags">
-                                    @foreach($tags as $id => $name)
-                                        <option value="{{ $id }}" {{ old('tags') == $id ? 'selected' : '' }}>{{ $name }}</option>
-                                    @endforeach
-                                </select>
                             </label>
                             <label class="block">
                                 <input type="submit"
