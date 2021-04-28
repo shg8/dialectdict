@@ -35,7 +35,7 @@
                         @csrf
                         <div class="grid grid-cols-1 gap-6">
                             <label class="block">
-                                <span class="text-gray-700"><b>Dialect *</b></span>
+                                <span class="text-gray-700"><b>Dialect <span class="text-red-500">*</b></b></span>
                             </label>
                             <select name="tags" class="rounded-lg">
                                 @foreach($tags as $id => $name)
@@ -43,13 +43,13 @@
                                 @endforeach
                             </select>
                             <label class="block">
-                                <span class="text-gray-700"><b>English *</b></span>
+                                <span class="text-gray-700"><b>English <span class="text-red-500">*</span></b></span>
                                 <input name="english" type="text" value="{{ old('english') }}"
                                        class="mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0">
                                 <span class="text-gray-500">Write the word you want to translate in English</span>
                             </label>
                             <label class="block">
-                                <span class="text-gray-700"><b>Pronunciation *</b></span>
+                                <span class="text-gray-700"><b>Pronunciation <span class="text-red-500">*</span></b></span>
                                 <input name="pronunciation" type="text" value="{{ old('pronunciation') }}"
                                        class="mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0">
                                 <span class="text-gray-500">Write the approximation of the how the word sounds in your dialect with English letters</span>
@@ -67,9 +67,11 @@
                                 <span class="text-gray-500">(Optional) Feel free to include English synonyms, sample sentences, and additional information</span>
                             </label>
                             <label class="block">
-                                <span class="text-gray-700">Upload Pronunciation (mp3, wav)</span>
+                                <span class="text-gray-700">Audio</span>
                                 <input name="upload" type="file"
                                        class="mt-1 block w-full bg-transparent border-transparent focus:border-gray-500 focus:bg-white focus:ring-0">
+                                <span class="text-gray-500">Upload Pronunciation (mp3, wav)</span>
+
                             </label>
                             <label class="block">
                                 <input type="submit"
