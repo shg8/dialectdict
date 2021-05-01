@@ -15,8 +15,8 @@
         </div>
     </div>
     <div class="max-w-7xl mx-auto">
-        <div class="grid grid-cols-1 lg:grid-cols-4 w-full">
-            <div class="col-span-3 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-3 w-full">
+            <div class="col-span-2 sm:px-6 lg:px-8">
                 <div class="bg-white bg-opacity-95 overflow-hidden shadow-sm rounded-lg">
                     <div class="p-6 border-b border-indigo-200">
                         <h2>{{ \Backpack\Settings\app\Models\Setting::get('homepage_intro_title') }}</h2>
