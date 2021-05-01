@@ -27,7 +27,7 @@
                 </div>
             </div>
             <div class="lg:mt-0 flex-auto flex-column sm:px-6 lg:px-8">
-                <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg rounded-b-lg" style="cursor: pointer"
+                <div class="bg-white overflow-hidden shadow-sm lg:rounded-lg rounded-b-lg" style="cursor: pointer"
                      onclick="window.location.href='{{ route('view', $word->id) }}'">
                     <div class="p-6 bg-white border-b border-gray-200">
                         <b>Word of the Day</b>
