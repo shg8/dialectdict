@@ -4,7 +4,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="relative flex items-center w-full mb-6">
                 <div class="flex items-center w-full rounded-lg shadow-md">
-                    <input id="search-bar" class="block w-full p-4 text-xl border border-gray-200 rounded-lg"
+                    <input id="search-bar" class="block w-full p-4 text-xl border border-indigo-200 rounded-lg bg-white bg-opacity-90"
                            autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false" type="text"
                            placeholder="{{ \Backpack\Settings\app\Models\Setting::get('search_bar_placeholder') }}">
                     <div class="absolute inset-y-0 right-0 flex items-center justify-center mr-5">
@@ -15,39 +15,39 @@
         </div>
     </div>
     <div class="max-w-7xl mx-auto">
-        <div class="flex flex-row flex-wrap items-stretch">
-            <div class="lg:max-w-3xl flex-auto sm:px-6 lg:px-8">
-                <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                    <div class="p-6 bg-white border-b border-gray-200">
+        <div class="grid grid-cols-1 lg:grid-cols-4 w-full">
+            <div class="col-span-3 sm:px-6 lg:px-8">
+                <div class="bg-white bg-opacity-95 overflow-hidden shadow-sm rounded-lg">
+                    <div class="p-6 border-b border-indigo-200">
                         <h2>{{ \Backpack\Settings\app\Models\Setting::get('homepage_intro_title') }}</h2>
                     </div>
-                    <div class="p-6 bg-white border-b border-gray-200">
+                    <div class="p-6 border-b border-indigo-200">
                         {!! \Backpack\Settings\app\Models\Setting::get('homepage_intro_content') !!}
                     </div>
                 </div>
             </div>
-            <div class="lg:mt-0 flex-auto flex-column sm:px-6 lg:px-8">
-                <div class="bg-white overflow-hidden shadow-sm lg:rounded-lg rounded-b-lg" style="cursor: pointer"
+            <div class="mt-6 lg:mt-0 flex flex-col sm:px-6 lg:px-8">
+                <div class="bg-white bg-opacity-95 overflow-hidden shadow-sm rounded-lg" style="cursor: pointer"
                      onclick="window.location.href='{{ route('view', $word->id) }}'">
-                    <div class="p-6 bg-white border-b border-gray-200">
+                    <div class="p-6 border-b border-indigo-200">
                         <b>Word of the Day</b>
                     </div>
-                    <div class="p-6 bg-white border-b border-gray-200">
+                    <div class="p-6 border-b border-indigo-200">
                         <b>English</b> <span class="font-serif"> {{ $word->english }}</span>
                     </div>
                     @if($word->pronunciation)
-                        <div class="p-6 bg-white border-b border-gray-200">
+                        <div class="p-6 border-b border-indigo-200">
                             <b>Pronunciation</b> <span class="font-serif"> {{ $word->pronunciation }}</span>
                         </div>
                     @endif
                 </div>
 
-                <div class="mt-6 bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                    <div class="p-6 bg-white border-b border-gray-200">
+                <div class="mt-6 bg-white bg-opacity-95 overflow-hidden shadow-sm sm:rounded-lg">
+                    <div class="p-6 border-b border-indigo-200">
                         <b>Recent Updates</b>
                     </div>
                     @foreach($recent_updates as $word)
-                        <div class="p-6 bg-white border-b border-gray-200" style="cursor:pointer;"
+                        <div class="p-6 border-b border-indigo-200" style="cursor:pointer;"
                              onclick="window.location.href='{{ route('view', $word->id) }}'">
                             <span class="font-serif text-lg">{{ $word->english }}</span><span
                                 class="text-gray-400"> by <i>{{ is_null($word->user_id) ? 'Anonymous User' : $word->user->name }}</i></span>
@@ -69,6 +69,7 @@
                 background-repeat: no-repeat;
                 background-attachment: fixed;
                 background-size: cover;
+                backdrop-filter: blur(100px);
             }
         </style>
 
