@@ -49,8 +49,8 @@
                     @foreach($recent_updates as $word)
                         <div class="p-6 bg-white border-b border-gray-200" style="cursor:pointer;"
                              onclick="window.location.href='{{ route('view', $word->id) }}'">
-                            <span class="font-serif text-lg">{{ $word->english }}</span> by <span
-                                class="font-italic">{{ is_null($word->user_id) ? 'Anonymous' : $word->user->name }}</span>
+                            <span class="font-serif text-lg">{{ $word->english }}</span><span
+                                class="text-gray-400"> by <i>{{ is_null($word->user_id) ? 'Anonymous User' : $word->user->name }}</i></span>
                         </div>
                     @endforeach
                 </div>
