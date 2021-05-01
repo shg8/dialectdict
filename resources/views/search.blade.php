@@ -16,7 +16,7 @@
     </div>
     <div class="max-w-7xl mx-auto">
         <div class="flex flex-row flex-wrap items-stretch">
-            <div class="lg:max-w-4xl flex-auto sm:px-6 lg:px-8">
+            <div class="lg:max-w-3xl flex-auto sm:px-6 lg:px-8">
                 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                     <div class="p-6 bg-white border-b border-gray-200">
                         <h2>{{ \Backpack\Settings\app\Models\Setting::get('homepage_intro_title') }}</h2>
