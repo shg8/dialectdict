@@ -8,7 +8,7 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-48">
-                <div class="flex flex-col items-center justify-center bg-white p-12 shadow rounded-lg">
+                <div class="flex flex-col items-center justify-between bg-white p-12 shadow rounded-lg">
                     <div class="inline-flex shadow-lg border border-gray-200 rounded-full overflow-hidden h-40 w-40">
                         <img src="{{ url('/images/about/noah.jpg') }}"
                              class="h-full">
@@ -24,9 +24,16 @@
 
                         By creating this website, my goal is to help other Chinese diaspora share their knowledge and learn more about their background through language.
                     </p>
+                    <ul class="flex flex-row mt-4 space-x-2">
+                        <li>
+                            <a href="mailto:ndlee@exeter.edu" class="flex items-center justify-center h-12 w-12 border rounded-full text-gray-800 border-gray-800 p-2">
+                                <x-gmdi-email-tt />
+                            </a>
+                        </li>
+                    </ul>
                 </div>
 
-                <div class="flex flex-col items-center justify-center bg-white p-12 shadow rounded-lg">
+                <div class="flex flex-col items-center justify-between bg-white p-12 shadow rounded-lg">
                     <div class="inline-flex shadow-lg border border-gray-200 rounded-full overflow-hidden h-40 w-40">
                         <img src="{{ url('/images/about/steven.jpg') }}"
                              class="h-full">
@@ -40,6 +47,13 @@
                     <p class="text-md-left text-gray-700 mt-3">
                         Language, as a medium of culture and tradition, has always fascinated me growing up. The crowd-sourcing approach of this dictionary seeks to reflect the diversity and colorfulness of Asian American culture, allowing us to comprehend the lived experience of different members of the community. In the backdrop of anti-Asian violence, words empower us, forge identities, and provide solidarity through common experiences. By developing this website, I hope to advance this objective through the power of technology.
                     </p>
+                    <ul class="flex flex-row mt-4 space-x-2">
+                        <li>
+                            <a href="mailto:hgao@exeter.edu" class="flex items-center justify-center h-12 w-12 border rounded-full text-gray-800 border-gray-800 p-2">
+                                <x-gmdi-email-tt />
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
