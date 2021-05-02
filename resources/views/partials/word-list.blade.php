@@ -18,9 +18,9 @@
                 </div>
                 <div class="absolute inset-y-0 right-0 flex items-center justify-center mr-5">
                     @if($word->pronunciation_upload)
-                    <x-heroicon-s-play class="w-6" onclick="play{{$word->id}}()"/>
+                        <x-heroicon-s-volume-up class="w-8" onclick="play{{$word->id}}()"/>
                     @endif
-                    <x-gmdi-double-arrow-r style="width: 1.5rem" onclick="window.location.href='{{ route('view', $word->id) }}'"/>
+                    <x-gmdi-double-arrow-r class="w-8"  onclick="window.location.href='{{ route('view', $word->id) }}'"/>
                 </div>
                 @if($word->pronunciation_upload)
                     @push('scripts')
