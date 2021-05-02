@@ -41,12 +41,12 @@
                         <b>English:</b> <span class="font-serif"> {{ $word->english }}</span>
                     </div>
                     @if($word->pronunciation || $word->pronunciation_upload)
-                        <div class="p-6 pt-3 border-b border-gray-200 flex justify-between">
+                        <div class="py-2 hidden" id="waveform-{{ $word->id }}"></div>
+                        <div class="p-6 pt-3 border-b border-gray-200 flex flex-row justify-between">
                             <span><b>Pronunciation:</b>
                                 @if($word->pronunciation)<span class="font-serif"> {{ $word->pronunciation }}</span>@endif
                             </span>
                             @if($word->pronunciation_upload)
-                                <div class="py-2" style="display: none" id="waveform-{{ $word->id }}"></div>
                                 <x-heroicon-s-play class="w-6" id="play{{$word->id}}"/>
                                 @push('scripts')
                                     <script>
