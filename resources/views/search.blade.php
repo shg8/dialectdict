@@ -6,13 +6,14 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="relative flex items-center w-full mb-6">
                 <div class="flex items-center w-full rounded-lg shadow-md">
-                    <input id="search-bar"
-                           class="block w-full p-4 text-xl border border-gray-200 rounded-lg bg-white bg-opacity-90"
+                    <input
+                        id="search-bar-main"
+                           class="search-bar block w-full p-4 text-xl border border-gray-200 rounded-lg bg-white bg-opacity-90"
                            autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false" type="text"
                            placeholder="{{ \Backpack\Settings\app\Models\Setting::get('search_bar_placeholder') }}">
-                    <div class="absolute inset-y-0 right-0 flex items-center justify-center mr-5">
-                        <x-gmdi-double-arrow-r style="width: 1.5rem" onclick="search()"/>
-                    </div>
+                    <button type="button" class="absolute inset-y-0 right-0 flex items-center justify-center mr-5">
+                        <x-gmdi-double-arrow-r style="width: 1.5rem" onclick="search($('#search-bar-main').val())"/>
+                    </button>
                 </div>
             </div>
         </div>
@@ -101,21 +102,4 @@
                 backdrop-filter: blur(100px);
             }
         </style>
-
-        @push('scripts')
-            <script>
-                $('#search-bar').on('keyup', function (e) {
-                    if (e.key === 'Enter' || e.keyCode === 13) {
-                        search();
-                    }
-                })
-
-                function search() {
-                    const searchValue = document.getElementById('search-bar').value;
-                    if (searchValue) {
-                        window.location.href = '{{ url('/search') }}/' + searchValue;
-                    }
-                }
-            </script>
-    @endpush
 </x-app-layout>
