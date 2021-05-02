@@ -41,7 +41,6 @@
 
             </div>
 
-            <div class="flex flex-row">
                 <div class="invisible lg:visible self-center pt-2 mb-2 relative mx-auto text-gray-600">
                     <input
                         class="search-bar border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none"
@@ -115,7 +114,6 @@
                         </div>
                     </div>
                 @endif
-            </div>
 
             <!-- Hamburger -->
             <div class="-mr-2 flex items-center sm:hidden">
