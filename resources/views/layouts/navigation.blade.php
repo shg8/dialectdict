@@ -21,11 +21,11 @@
                         {{ __('Contribute') }}
                     </x-nav-link>
                 </div>
-{{--                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">--}}
-{{--                    <x-nav-link :href="route('discover')" :active="request()->routeIs('discover')">--}}
-{{--                        {{ __('Discover') }}--}}
-{{--                    </x-nav-link>--}}
-{{--                </div>--}}
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('discover')" :active="request()->routeIs('discover')">
+                        {{ __('Discover') }}
+                    </x-nav-link>
+                </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('about')" :active="request()->routeIs('about')">
                         {{ __('About') }}
@@ -141,9 +141,9 @@
             <x-responsive-nav-link :href="route('contribute')" :active="request()->routeIs('contribute')">
                 {{ __('Contribute') }}
             </x-responsive-nav-link>
-{{--            <x-responsive-nav-link :href="route('discover')" :active="request()->routeIs('discover')">--}}
-{{--                {{ __('Discover') }}--}}
-{{--            </x-responsive-nav-link>--}}
+            <x-responsive-nav-link :href="route('discover')" :active="request()->routeIs('discover')">
+                {{ __('Discover') }}
+            </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('about')" :active="request()->routeIs('about')">
                 {{ __('About') }}
             </x-responsive-nav-link>
