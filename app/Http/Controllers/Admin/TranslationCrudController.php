@@ -45,6 +45,7 @@ class TranslationCrudController extends CrudController
         CRUD::column('english');
         CRUD::column('chinese');
         CRUD::column('pronunciation');
+        CRUD::column('pronunciation_upload');
     }
 
     /**

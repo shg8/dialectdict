@@ -5,7 +5,7 @@
     <div class="mx-8 bg-white overflow-hidden shadow-sm sm:rounded-lg flex flex-col flex-auto">
         @foreach ($words as $word)
             <div class="word-item relative flex p-6 bg-white border-b border-gray-200">
-                <div class="block w-full ">
+                <div class="block w-full" onclick="window.location.href='{{ route('view', $word->id) }}'">
                     @foreach($word->tags as $tag)
                         <span
                             class="m-1 bg-gray-200 rounded-full px-2 font-bold text-sm leading-loose cursor-pointer">{{ $tag->name }}</span>
@@ -16,6 +16,12 @@
                     @if($word->pronunciation_upload)
                         <div class="py-2" style="display: none" id="waveform-{{ $word->id }}"></div>
                     @endif
+                </div>
+                <div class="absolute inset-y-0 right-0 flex items-center justify-center mr-5">
+                    @if($word->pronunciation_upload)
+                    <x-heroicon-s-play class="w-6" onclick="play{{$word->id}}()"/>
+                    @endif
+                    <x-gmdi-double-arrow-r style="width: 1.5rem" onclick="window.location.href='{{ route('view', $word->id) }}'"/>
                 </div>
                 @if($word->pronunciation_upload)
                     @push('scripts')
@@ -35,12 +41,6 @@
                         </script>
                     @endpush
                 @endif
-                <div class="absolute inset-y-0 right-0 flex items-center justify-center mr-5">
-                    @if($word->pronunciation_upload)
-                    <x-heroicon-s-play class="w-6" onclick="play{{$word->id}}()"/>
-                    @endif
-                    <x-gmdi-double-arrow-r style="width: 1.5rem" onclick="window.location.href='{{ route('view', $word->id) }}'"/>
-                </div>
             </div>
         @endforeach
     </div>

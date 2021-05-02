@@ -25,7 +25,7 @@ class DiscoverController extends Controller
     public function tagged($tag)
     {
         if (!is_numeric($tag)) {
-            abort(404);
+            $tag = Tag::whereName($tag)->firstOrFail()->id;
         }
         $words = Translation::whereHas('tags', function (Builder $query) use ($tag) {
             $query->where('tags.id', $tag);

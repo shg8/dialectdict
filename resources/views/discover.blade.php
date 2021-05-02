@@ -10,7 +10,7 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
                     @foreach($tags as $id => $name)
-                        <span class="m-1 bg-gray-200 hover:bg-gray-300 rounded-full px-2 font-bold text-sm leading-loose cursor-pointer" onclick="window.location.href='{{ route('discover.tagged', $id) }}'">{{ $name }}</span>
+                        <span class="m-1 bg-gray-200 hover:bg-gray-300 rounded-full px-2 font-bold text-sm leading-loose cursor-pointer" onclick="window.location.href='{{ route('discover.tagged', $name) }}'">{{ $name }}</span>
                     @endforeach
                 </div>
             </div>

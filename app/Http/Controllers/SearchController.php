@@ -12,8 +12,11 @@ class SearchController extends Controller
 
     public function index()
     {
-        $word_of_the_day = Translation::inRandomOrder(Carbon::now()->startOfDay()->toDateString())->first();
-        $recent_updates = Translation::orderByDesc('updated_at')->limit(2)->get();
+        $word_of_the_day = Translation::whereNotNull('pronunciation_upload')->inRandomOrder(Carbon::now()->startOfDay()->toDateString())->first();
+        if ($word_of_the_day == null) {
+            $word_of_the_day = Translation::inRandomOrder(Carbon::now()->startOfDay()->toDateString())->first();
+        }
+        $recent_updates = Translation::orderByDesc('updated_at')->limit(5)->get();
         return view('search', [
             'word' => $word_of_the_day,
             'recent_updates' => $recent_updates,
