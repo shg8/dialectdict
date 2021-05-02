@@ -7,8 +7,7 @@
             <div class="word-item relative flex p-6 bg-white border-b border-gray-200">
                 <div class="block w-full" onclick="window.location.href='{{ route('view', $word->id) }}'">
                     @foreach($word->tags as $tag)
-                        <span
-                            class="m-1 bg-gray-200 rounded-full px-2 font-bold text-sm leading-loose cursor-pointer">{{ $tag->name }}</span>
+                        @include('partials.tag')
                     @endforeach
                     <b>{{ $word->english }}</b>
                     <span class="italic">{{ $word->pronunciation }}</span>

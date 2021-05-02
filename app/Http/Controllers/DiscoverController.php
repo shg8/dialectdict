@@ -13,7 +13,7 @@ class DiscoverController extends Controller
     public function index()
     {
         $words = Translation::inRandomOrder()->limit(20)->get();
-        $tags = Tag::all()->pluck('name', 'id');
+        $tags = Tag::all();
 
         return view('discover', [
             'words' => $words,
@@ -30,7 +30,7 @@ class DiscoverController extends Controller
         $words = Translation::whereHas('tags', function (Builder $query) use ($tag) {
             $query->where('tags.id', $tag);
         })->inRandomOrder()->limit(20)->get();
-        $tags = Tag::all()->pluck('name', 'id');
+        $tags = Tag::all();
         return view('discover', [
             'words' => $words,
             'tags' => $tags,
