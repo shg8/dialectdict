@@ -13,7 +13,7 @@
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('search')" :active="request()->routeIs('search')">
-                        {{ __('Search') }}
+                        {{ __('Home') }}
                     </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
@@ -21,11 +21,11 @@
                         {{ __('Contribute') }}
                     </x-nav-link>
                 </div>
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('discover')" :active="request()->routeIs('discover')">
-                        {{ __('Discover') }}
-                    </x-nav-link>
-                </div>
+{{--                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">--}}
+{{--                    <x-nav-link :href="route('discover')" :active="request()->routeIs('discover')">--}}
+{{--                        {{ __('Discover') }}--}}
+{{--                    </x-nav-link>--}}
+{{--                </div>--}}
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('about')" :active="request()->routeIs('about')">
                         {{ __('About') }}
@@ -44,7 +44,7 @@
             <div class="hidden lg:inline self-center pt-2 mb-2 relative mx-auto text-gray-600">
                 <input
                     class="search-bar border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none"
-                    type="search" id="search-bar-top" placeholder="Search">
+                    type="search" id="search-bar-top" placeholder="Search Word">
                 <button type="button" class="absolute right-0 top-0 mt-5 mr-4"
                         onclick="search($('#search-bar-top').val())">
                     <x-heroicon-o-search class="text-gray-600 h-4 w-4 "/>
@@ -136,14 +136,14 @@
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('search')" :active="request()->routeIs('search')">
-                {{ __('Search') }}
+                {{ __('Home') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('contribute')" :active="request()->routeIs('contribute')">
                 {{ __('Contribute') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('discover')" :active="request()->routeIs('discover')">
-                {{ __('Discover') }}
-            </x-responsive-nav-link>
+{{--            <x-responsive-nav-link :href="route('discover')" :active="request()->routeIs('discover')">--}}
+{{--                {{ __('Discover') }}--}}
+{{--            </x-responsive-nav-link>--}}
             <x-responsive-nav-link :href="route('about')" :active="request()->routeIs('about')">
                 {{ __('About') }}
             </x-responsive-nav-link>

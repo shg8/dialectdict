@@ -29,6 +29,13 @@ class SettingsSeeder extends Seeder
             'value'       => 'Hello',
             'field'       => '{"name":"value","label":"Value","type":"wysiwyg"}',
             'active'      => 1,
+        ],
+        [
+            'key'         => 'about_story',
+            'name'        => 'About Page Textbox',
+            'value'       => '',
+            'field'       => '{"name":"value","label":"Value","type":"wysiwyg"}',
+            'active'      => 1,
         ]
     ];
 
@@ -39,11 +46,10 @@ class SettingsSeeder extends Seeder
      */
     public function run()
     {
-        if (DB::table('settings')->exists()) {
-            DB::table('settings')->truncate();
-        }
-
         foreach ($this->settings as $index => $setting) {
+            if (DB::table('settings')->where('key', $setting['key'])->exists()) {
+                continue;
+            }
             $result = DB::table('settings')->insert($setting);
 
             if (!$result) {
