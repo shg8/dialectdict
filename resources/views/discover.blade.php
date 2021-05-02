@@ -5,17 +5,23 @@
         </h2>
     </x-slot>
 
+    @if(\App\Models\Tag::count()>1)
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 bg-white border-b border-gray-200">
-                    @foreach($tags as $tag)
-                        @include('partials.tag')
-                    @endforeach
+                <div class="flex flex-row justify-start items-center">
+                    <p class="pl-6 font-bold">Sort By </p>
+                    <div class="p-6 bg-white border-b border-gray-200">
+                        @foreach($tags as $tag)
+                            @include('partials.tag')
+                        @endforeach
+                    </div>
                 </div>
+
             </div>
         </div>
     </div>
+    @endif
 
     <div id="word-container" class="max-w-7xl mx-auto flex flex-row flex-wrap px-0 lg:px-4">
         @foreach ($words as $word)
