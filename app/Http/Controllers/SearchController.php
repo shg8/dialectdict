@@ -16,10 +16,12 @@ class SearchController extends Controller
         if ($word_of_the_day == null) {
             $word_of_the_day = Translation::inRandomOrder(Carbon::now()->startOfDay()->toDateString())->first();
         }
+        $agent = new \Jenssegers\Agent\Agent;
         $recent_updates = Translation::orderByDesc('updated_at')->limit(5)->get();
         return view('search', [
             'word' => $word_of_the_day,
             'recent_updates' => $recent_updates,
+            'mobile' => $agent->isMobile(),
         ]);
     }
 

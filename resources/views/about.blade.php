@@ -37,7 +37,7 @@
                             <li>
                                 <a href="mailto:hgao@exeter.edu"
                                    class="flex items-center justify-center h-12 w-12 border rounded-full text-gray-800 border-gray-800 p-2">
-                                    <x-gmdi-email-tt/>
+                                    <x-gmdi-email-tt style="w-6 h-6"/>
                                 </a>
                             </li>
                         </ul>
@@ -74,7 +74,7 @@
                             <li>
                                 <a href="mailto:hgao@exeter.edu"
                                    class="flex items-center justify-center h-12 w-12 border rounded-full text-gray-800 border-gray-800 p-2">
-                                    <x-gmdi-email-tt/>
+                                    <x-gmdi-email-tt style="w-6 h-6"/>
                                 </a>
                             </li>
                         </ul>
