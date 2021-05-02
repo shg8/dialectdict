@@ -41,7 +41,7 @@
 
             </div>
 
-            <div class="hidden lg:visible self-center pt-2 mb-2 relative mx-auto text-gray-600">
+            <div class="hidden lg:inline self-center pt-2 mb-2 relative mx-auto text-gray-600">
                 <input
                     class="search-bar border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none"
                     type="search" id="search-bar-top" placeholder="Search">
