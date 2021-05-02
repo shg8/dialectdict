@@ -94,7 +94,7 @@
             $randomFile = $files[rand(0, count($files) - 1)];
         @endphp
 
-        @if($mobile)
+        @if(!$mobile)
             <style>
                 .custom-bg {
                     background-image: url('/images/backgrounds/{{ $randomFile->getBasename() }}');
