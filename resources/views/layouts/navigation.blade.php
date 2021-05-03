@@ -49,21 +49,6 @@
 {{--                        onclick="search($('#search-bar-top').val())">--}}
 {{--                    <x-heroicon-o-search class="text-gray-600 h-4 w-4 "/>--}}
 {{--                </button>--}}
-{{--                @push('scripts')--}}
-{{--                    <script>--}}
-{{--                        $('.search-bar').on('keyup', function (e) {--}}
-{{--                            if (e.key === 'Enter' || e.keyCode === 13) {--}}
-{{--                                search(e.target.value);--}}
-{{--                            }--}}
-{{--                        })--}}
-
-{{--                        function search(searchValue) {--}}
-{{--                            if (searchValue) {--}}
-{{--                                window.location.href = '{{ url('/search') }}/' + searchValue;--}}
-{{--                            }--}}
-{{--                        }--}}
-{{--                    </script>--}}
-{{--                @endpush--}}
 {{--            </div>--}}
         @if(!Auth::guest())
             <!-- Settings Dropdown -->
@@ -194,4 +179,20 @@
             </div>
         @endif
     </div>
+
+    @push('scripts')
+        <script>
+            $('.search-bar').on('keyup', function (e) {
+                if (e.key === 'Enter' || e.keyCode === 13) {
+                    search(e.target.value);
+                }
+            })
+
+            function search(searchValue) {
+                if (searchValue) {
+                    window.location.href = '{{ url('/search') }}/' + searchValue;
+                }
+            }
+        </script>
+    @endpush
 </nav>
