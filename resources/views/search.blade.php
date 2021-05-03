@@ -2,31 +2,31 @@
     @push('scripts')
         <script src="https://unpkg.com/wavesurfer.js"></script>
     @endpush
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="relative flex items-center justify-center w-full mb-6">
-                <div class="flex items-center w-6/12 rounded-full shadow-md">
-                    <input
-                        id="search-bar-main"
-                        class="search-bar block w-full p-4 text-xl border border-gray-200 rounded-full bg-white bg-opacity-90"
-                        autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false" type="text"
-                        placeholder="{!! \Backpack\Settings\app\Models\Setting::get('search_bar_placeholder')  !!}">
-                    <button type="button" class="absolute inset-y-0 right-1/4 flex items-center justify-center mr-5">
-                        <x-gmdi-double-arrow-r style="width: 1.5rem" onclick="search($('#search-bar-main').val())"/>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="max-w-7xl mx-auto">
+    <div class="max-w-7xl mx-auto py-12">
         <div class="grid grid-cols-1 lg:grid-cols-3 w-full">
-            <div class="col-span-2 sm:px-6 lg:px-8">
+            <div class="col-span-2 sm:px-6 lg:px-8 flex flex-col">
                 <div class="bg-white overflow-hidden shadow-sm rounded-lg">
                     <div class="p-6 border-b border-gray-200">
                         <h2>{!! \Backpack\Settings\app\Models\Setting::get('homepage_intro_title')  !!}</h2>
                     </div>
                     <div class="p-6 border-b border-gray-200">
                         {!! \Backpack\Settings\app\Models\Setting::get('homepage_intro_content') !!}
+                    </div>
+                </div>
+                <div class="pt-12">
+                    <div class="max-w-7xl mx-auto">
+                        <div class="relative flex items-center justify-center w-full mb-6">
+                            <div class="flex items-center w-full rounded-full shadow-md">
+                                <input
+                                    id="search-bar-main"
+                                    class="search-bar block w-full p-4 text-xl border border-gray-200 rounded-full bg-white bg-opacity-90"
+                                    autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false" type="text"
+                                    placeholder="{!! \Backpack\Settings\app\Models\Setting::get('search_bar_placeholder')  !!}">
+                                <button type="button" class="absolute inset-y-0 right-0 flex items-center justify-center mr-5">
+                                    <x-gmdi-double-arrow-r style="width: 1.5rem" onclick="search($('#search-bar-main').val())"/>
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
