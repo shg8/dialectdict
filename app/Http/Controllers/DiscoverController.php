@@ -12,7 +12,7 @@ class DiscoverController extends Controller
 
     public function index()
     {
-        $words = Translation::inRandomOrder()->limit(20)->get();
+        $words = Translation::whereApproved(true)->inRandomOrder()->limit(20)->get();
         $tags = Tag::all();
 
         return view('discover', [
@@ -27,7 +27,7 @@ class DiscoverController extends Controller
         if (!is_numeric($tag)) {
             $tag = Tag::whereName($tag)->firstOrFail()->id;
         }
-        $words = Translation::whereHas('tags', function (Builder $query) use ($tag) {
+        $words = Translation::whereApproved(true)->whereHas('tags', function (Builder $query) use ($tag) {
             $query->where('tags.id', $tag);
         })->inRandomOrder()->limit(20)->get();
         $tags = Tag::all();

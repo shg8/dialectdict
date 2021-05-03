@@ -23,6 +23,7 @@ class ContributeController extends Controller
         $validated = $request->validated();
         $validated['english'] = strtolower($validated['english']);
         $validated['pronunciation'] = strtolower($validated['pronunciation']);
+        $validated['approved'] = false;
 
         if ($request->hasFile('upload')) {
             $uid = \Auth::guest() ? time() : \Auth::user()->id;

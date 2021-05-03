@@ -41,30 +41,30 @@
 
             </div>
 
-            <div class="hidden lg:inline self-center pt-2 mb-2 relative mx-auto text-gray-600">
-                <input
-                    class="search-bar border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none"
-                    type="search" id="search-bar-top" placeholder="Search Word">
-                <button type="button" class="absolute right-0 top-0 mt-5 mr-4"
-                        onclick="search($('#search-bar-top').val())">
-                    <x-heroicon-o-search class="text-gray-600 h-4 w-4 "/>
-                </button>
-                @push('scripts')
-                    <script>
-                        $('.search-bar').on('keyup', function (e) {
-                            if (e.key === 'Enter' || e.keyCode === 13) {
-                                search(e.target.value);
-                            }
-                        })
+{{--            <div class="hidden lg:inline self-center pt-2 mb-2 relative mx-auto text-gray-600">--}}
+{{--                <input--}}
+{{--                    class="search-bar border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none"--}}
+{{--                    type="search" id="search-bar-top" placeholder="Search Word">--}}
+{{--                <button type="button" class="absolute right-0 top-0 mt-5 mr-4"--}}
+{{--                        onclick="search($('#search-bar-top').val())">--}}
+{{--                    <x-heroicon-o-search class="text-gray-600 h-4 w-4 "/>--}}
+{{--                </button>--}}
+{{--                @push('scripts')--}}
+{{--                    <script>--}}
+{{--                        $('.search-bar').on('keyup', function (e) {--}}
+{{--                            if (e.key === 'Enter' || e.keyCode === 13) {--}}
+{{--                                search(e.target.value);--}}
+{{--                            }--}}
+{{--                        })--}}
 
-                        function search(searchValue) {
-                            if (searchValue) {
-                                window.location.href = '{{ url('/search') }}/' + searchValue;
-                            }
-                        }
-                    </script>
-                @endpush
-            </div>
+{{--                        function search(searchValue) {--}}
+{{--                            if (searchValue) {--}}
+{{--                                window.location.href = '{{ url('/search') }}/' + searchValue;--}}
+{{--                            }--}}
+{{--                        }--}}
+{{--                    </script>--}}
+{{--                @endpush--}}
+{{--            </div>--}}
         @if(!Auth::guest())
             <!-- Settings Dropdown -->
                 <div class="hidden sm:flex sm:items-center sm:ml-6">

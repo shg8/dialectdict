@@ -46,6 +46,7 @@ class TranslationCrudController extends CrudController
         CRUD::column('chinese');
         CRUD::column('pronunciation');
         CRUD::column('pronunciation_upload');
+        CRUD::column('approved');
     }
 
     /**
@@ -62,6 +63,11 @@ class TranslationCrudController extends CrudController
         CRUD::field('chinese');
         CRUD::field('definition');
         CRUD::field('pronunciation');
+        CRUD::addField([   // Checkbox
+            'name'  => 'approved',
+            'label' => 'Approved',
+            'type'  => 'checkbox'
+        ]);
         CRUD::addField([
             'name' => 'pronunciation_upload',
             'label' => 'Upload Pronunciation',

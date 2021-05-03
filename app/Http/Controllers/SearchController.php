@@ -12,9 +12,9 @@ class SearchController extends Controller
 
     public function index()
     {
-        $word_of_the_day = Translation::whereNotNull('pronunciation_upload')->inRandomOrder(Carbon::now()->startOfDay()->toDateString())->first();
+        $word_of_the_day = Translation::whereApproved(true)->whereNotNull('pronunciation_upload')->inRandomOrder(Carbon::now()->startOfDay()->toDateString())->first();
         if ($word_of_the_day == null) {
-            $word_of_the_day = Translation::inRandomOrder(Carbon::now()->startOfDay()->toDateString())->first();
+            $word_of_the_day = Translation::whereApproved(true)->inRandomOrder(Carbon::now()->startOfDay()->toDateString())->first();
         }
         $agent = new \Jenssegers\Agent\Agent;
         $recent_updates = Translation::orderByDesc('updated_at')->limit(5)->get();
@@ -31,7 +31,7 @@ class SearchController extends Controller
             return redirect(route('search'));
         }
 
-        $results = Translation::whereFuzzy('english', $term)
+        $results = Translation::whereApproved(true)->whereFuzzy('english', $term)
             ->orderBy('relevance_english', 'desc')
             ->limit(20)
             ->get();

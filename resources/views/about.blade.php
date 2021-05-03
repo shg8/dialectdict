@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Our Story') }}
+            {{ __('About DialectDict') }}
         </h2>
     </x-slot>
 
@@ -29,13 +29,12 @@
                                      class="h-full">
                             </div>
 
-                            <h2 class="mt-4 font-bold text-xl">Noah</h2>
+                            <h2 class="mt-4 font-bold text-xl">Noah Lee</h2>
                             <h6 class="mt-2 text-sm font-medium">Co-Founder</h6>
 
-                            <p class="text-md-left md:text-gray-500 mt-3">Noah is a high school senior from New York.</p>
 
                             <p class="text-md-left text-gray-700 mt-3">
-                                This dictionary came from my desire to connect with my family’s heritage. My mom’s side of the
+                                The origins of this dictionary came from my desire to connect with my family’s heritage. My mom’s side of the
                                 family speaks a dialect of Chinese called Fuzhounese and I’ve always wanted to learn the
                                 language so I could communicate with them, especially since some of them don’t speak English.
                                 While studying online, I noticed that there were few resources for learning Fuzhounese—or any
@@ -52,6 +51,12 @@
                                     <x-gmdi-email-tt class="w-6 h-6"/>
                                 </a>
                             </li>
+                            <li>
+                                <a href="https://instagram.com/noahdarwinlee"
+                                   class="flex items-center justify-center h-12 w-12 border rounded-full text-gray-800 border-gray-800 p-2">
+                                    <x-bi-instagram class="w-6 h-6"/>
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -65,10 +70,9 @@
                                      class="h-full">
                             </div>
 
-                            <h2 class="mt-4 font-bold text-xl">Steven</h2>
+                            <h2 class="mt-4 font-bold text-xl">Steven Gao</h2>
                             <h6 class="mt-2 text-sm font-medium">Co-Founder</h6>
 
-                            <p class="text-md-left md:text-gray-500 mt-3">Steven is a high school senior from China.</p>
 
                             <p class="text-md-left text-gray-700 mt-3">
                                 Language, as a medium of culture and tradition, has always fascinated me growing up. The
@@ -87,6 +91,12 @@
                                 <a href="mailto:hgao@exeter.edu"
                                    class="flex items-center justify-center h-12 w-12 border rounded-full text-gray-800 border-gray-800 p-2">
                                     <x-gmdi-email-tt class="w-6 h-6"/>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.linkedin.com/in/stevenhgao/"
+                                   class="flex items-center justify-center h-12 w-12 border rounded-full text-gray-800 border-gray-800 p-2">
+                                    <x-bi-linkedin class="w-6 h-6"/>
                                 </a>
                             </li>
                         </ul>
