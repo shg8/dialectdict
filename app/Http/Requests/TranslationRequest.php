@@ -30,7 +30,7 @@ class TranslationRequest extends FormRequest
             'chinese' => 'nullable|max:255',
             'definition' => 'nullable|max:2000',
             'pronunciation' => 'nullable|max:255',
-            'pronunciation_upload' => 'nullable|file|mimes:mp3,wav',
+            'pronunciation_upload' => 'nullable|file',
         ];
     }
 

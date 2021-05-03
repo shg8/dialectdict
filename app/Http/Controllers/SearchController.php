@@ -17,7 +17,7 @@ class SearchController extends Controller
             $word_of_the_day = Translation::whereApproved(true)->inRandomOrder(Carbon::now()->startOfDay()->toDateString())->first();
         }
         $agent = new \Jenssegers\Agent\Agent;
-        $recent_updates = Translation::orderByDesc('updated_at')->limit(5)->get();
+        $recent_updates = Translation::whereApproved(true)->orderByDesc('updated_at')->limit(5)->get();
         return view('search', [
             'word' => $word_of_the_day,
             'recent_updates' => $recent_updates,
