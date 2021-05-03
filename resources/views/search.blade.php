@@ -77,7 +77,7 @@
                             Recent Updates
                         </div>
                         @foreach($recent_updates as $word)
-                            <div class="pl-6 p-4 @if(!$loop->last) pb-0 @endif hover:bg-gray-100 flex flex-row justify-start items-end" onclick="window.location.href='{{ route('view', $word->id) }}'">
+                            <div class="pl-6 p-4 @if(!$loop->last) pb-0 @endif hover:underline cursor-pointer flex flex-row justify-start items-end" onclick="window.location.href='{{ route('view', $word->id) }}'">
                                 <span class="font-serif text-xl">{{ $word->english }}</span>
                                 &nbsp;
                                 <span class="text-gray-700 italic">
