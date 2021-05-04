@@ -12,11 +12,11 @@
                     <div class="p-6 bg-white border-gray-200">
                         <p class="font-serif text-6xl text-center">{{ $model->english }}</p>
                     </div>
-                    <div class="p-6 pt-0 flex justify-center border-b border-gray-200">
-                        @foreach($model->tags as $tag)
-                            @include('partials.tag')
-                        @endforeach
-                    </div>
+{{--                    <div class="p-6 pt-0 flex justify-center border-b border-gray-200">--}}
+{{--                        @foreach($model->tags as $tag)--}}
+{{--                            @include('partials.tag')--}}
+{{--                        @endforeach--}}
+{{--                    </div>--}}
                     @if($model->chinese)
                         <div class="p-6 bg-white border-b border-gray-200">
                             <p class="font-serif text-6xl text-center">{{ $model->chinese }}</p>

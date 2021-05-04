@@ -28,7 +28,7 @@ class ContributionRequest extends FormRequest
             'chinese' => 'required_without_all:pronunciation,definition|max:50',
             'pronunciation' => 'required|max:50',
             'definition' => 'required_without_all:chinese,pronunciation|max:1000',
-            'upload' => 'nullable|file|mimes:mp3,wav',
+            'upload' => 'nullable|file|mimes:mp3,wav,m4a',
             'tags' => 'required|exists:App\Models\Tag,id'
         ];
     }

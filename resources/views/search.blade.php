@@ -19,7 +19,7 @@
                             <div class="flex items-center w-full rounded-full shadow-md">
                                 <input
                                     id="search-bar-main"
-                                    class="search-bar block w-full p-4 text-xl border border-gray-200 rounded-full bg-white bg-opacity-90"
+                                    class="search-bar block w-full p-4 text-xl border border-gray-200 rounded-full bg-white bg-opacity-90 focus:border-purple-900"
                                     autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false" type="text"
                                     placeholder="{!! \Backpack\Settings\app\Models\Setting::get('search_bar_placeholder')  !!}">
                                 <button type="button" class="absolute inset-y-0 right-0 flex items-center justify-center mr-5">
@@ -68,7 +68,7 @@
                             </div>
                         @endif
                         <div class="py-4 w-full hover:bg-gray-100">
-                            <p class="text-center text-indigo-500 ">Learn More</p>
+                            <p class="text-center text-purple-700 ">Learn More</p>
                         </div>
                     </div>
 

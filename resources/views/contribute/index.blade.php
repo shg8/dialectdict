@@ -70,7 +70,7 @@
                                 <span class="text-gray-700">Audio</span>
                                 <input name="upload" type="file"
                                        class="mt-1 block w-full bg-transparent border-transparent focus:border-gray-500 focus:bg-white focus:ring-0">
-                                <span class="text-gray-500">Upload Pronunciation (mp3, wav)</span>
+                                <span class="text-gray-500">Upload Pronunciation (mp3, wav, m4a)</span>
 
                             </label>
                             <label class="block">
